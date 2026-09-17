@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dev_log_panel"
+    android:elevation="16dp">
+
+    <LinearLayout
+        android:id="@+id/devLogHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:paddingVertical="@dimen/spacing_sm">
+
+        <TextView
+            android:id="@+id/devLogHandleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dev_log_show"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:textColor="@color/colorOnSurfaceVariant" />
+
+        <TextView
+            android:id="@+id/devLogClearBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dev_log_clear"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorClearRed"
+            android:paddingHorizontal="@dimen/spacing_sm"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/devLogScroll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_log_panel_content_height"
+        android:background="@color/colorSurfaceInset"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/devLogText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:textColor="@color/colorOnSurfaceVariant"
+            android:padding="@dimen/spacing_sm"
+            android:textIsSelectable="true" />
+
+    </ScrollView>
+
+</LinearLayout>

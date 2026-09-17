@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:focusableInTouchMode="true"
+    android:background="@color/colorSurfaceBase"
+    tools:context=".SuccessPayment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_md"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:paddingVertical="@dimen/spacing_xl"
+        android:background="@drawable/bg_amount_card"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_max="480dp">
+
+        <ImageView
+            android:id="@+id/successGif"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/success" />
+
+        <TextView
+            android:id="@+id/trxTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:gravity="center"
+            android:fontFamily="@font/bebas"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/colorOnSurface"
+            android:text="@string/payment_success_title" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cta_min_height"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="Exit"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/colorOnPrimaryEmerald"
+            android:background="@drawable/bg_charge_button" />
+
+        <TextView
+            android:id="@+id/logText"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/colorOnSurfaceVariant"
+            android:text="Logger" />
+
+    </LinearLayout>
+
+    <com.fiuu.toppayment.DevLogPanelView
+        android:id="@+id/devLogPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Opaque stand-in for the nav bar: on API 35+ setNavigationBarColor/SystemBarStyle no
+         longer tint the system nav bar, so this sits behind it and is sized to its height in code. -->
+    <View
+        android:id="@+id/navBarBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorSurfaceBase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:focusableInTouchMode="true"
+    android:background="@color/colorSurfaceBase"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoutPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_md"
+            android:paddingBottom="@dimen/spacing_lg">
+
+            <!-- Amount display -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:paddingHorizontal="@dimen/spacing_md"
+                android:paddingVertical="@dimen/spacing_xl"
+                android:background="@drawable/bg_amount_card"
+                android:elevation="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Please enter payment amount"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorOnSurfaceVariant"
+                    android:layout_marginBottom="@dimen/spacing_sm" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:paddingBottom="18dp"
+                        android:text="MYR"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorOnSurfaceVariant"
+                        android:fontFamily="@font/bebas"
+                        android:layout_marginEnd="@dimen/spacing_sm" />
+
+                    <TextView
+                        android:id="@+id/amountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:fontFamily="@font/bebas"
+                        android:textSize="88sp"
+                        android:textColor="@color/colorOnSurface"
+                        android:text="0.00" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Numeric keypad -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/spacing_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView android:id="@+id/key1" style="@style/KeypadKey" android:text="1" />
+                    <TextView android:id="@+id/key2" style="@style/KeypadKey" android:text="2" />
+                    <TextView android:id="@+id/key3" style="@style/KeypadKey" android:text="3" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView android:id="@+id/key4" style="@style/KeypadKey" android:text="4" />
+                    <TextView android:id="@+id/key5" style="@style/KeypadKey" android:text="5" />
+                    <TextView android:id="@+id/key6" style="@style/KeypadKey" android:text="6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView android:id="@+id/key7" style="@style/KeypadKey" android:text="7" />
+                    <TextView android:id="@+id/key8" style="@style/KeypadKey" android:text="8" />
+                    <TextView android:id="@+id/key9" style="@style/KeypadKey" android:text="9" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/keyClear"
+                        style="@style/KeypadKey"
+                        android:text="C"
+                        android:textColor="@color/colorClearRed"
+                        android:contentDescription="Clear amount" />
+                    <TextView android:id="@+id/key0" style="@style/KeypadKey" android:text="0" />
+                    <TextView
+                        android:id="@+id/keyBackspace"
+                        style="@style/KeypadKey"
+                        android:text="&#9003;"
+                        android:contentDescription="Backspace" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Primary settlement CTA -->
+            <Button
+                android:id="@+id/btnTrx"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cta_min_height"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="CHARGE MYR 0"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorOnPrimaryEmerald"
+                android:background="@drawable/bg_charge_button"
+                android:elevation="6dp" />
+
+            <!-- Void last transaction CTA -->
+            <Button
+                android:id="@+id/btnVoidTrx"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cta_min_height"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:enabled="false"
+                android:text="VOID LAST TRANSACTION"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorOnClearRed"
+                android:background="@drawable/bg_void_button"
+                android:elevation="6dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:layout_marginEnd="@dimen/spacing_sm"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/info_icon"
+        android:scaleType="fitCenter"
+        android:padding="10dp"
+        android:contentDescription="@string/info_button_description"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.fiuu.toppayment.DevLogPanelView
+        android:id="@+id/devLogPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Opaque stand-in for the nav bar: on API 35+ setNavigationBarColor/SystemBarStyle no
+         longer tint the system nav bar, so this sits behind it and is sized to its height in code. -->
+    <View
+        android:id="@+id/navBarBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorSurfaceBase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

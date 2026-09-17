@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#241333" /> <!-- fallback base, also defines the clip outline -->
+    <corners android:radius="16dp" />
+</shape>

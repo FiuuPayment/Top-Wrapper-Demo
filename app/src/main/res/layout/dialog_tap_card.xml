@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/dialogBlurBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorScrimOnBlur" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/spacing_md"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/spacing_xl"
+        android:background="@drawable/bg_amount_card"
+        android:elevation="12dp">
+
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="140dp">
+
+            <View
+                android:id="@+id/nfcGlowRing"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_nfc_glow_ring" />
+
+            <FrameLayout
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_nfc_icon_circle">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_nfc_wave"
+                    android:importantForAccessibility="no" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="Hold Card to Phone"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/bebas"
+            android:textColor="@color/colorOnSurface" />
+
+        <TextView
+            android:id="@+id/dialogTapSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:gravity="center_horizontal"
+            android:text="Please Tap Your Card"
+            android:textSize="14sp"
+            android:textColor="@color/colorOnSurfaceVariant" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:padding="@dimen/spacing_md"
+            android:background="@drawable/bg_charge_amount_chip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHARGE AMOUNT"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:textColor="@color/colorOnSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/dialogChargeAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="MYR 0.00"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryEmerald" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDialogCancel"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/colorOnSurface"
+            android:background="@drawable/bg_dialog_cancel_button" />
+
+    </LinearLayout>
+
+    <com.fiuu.toppayment.DevLogPanelView
+        android:id="@+id/devLogPanelDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:elevation="16dp" />
+
+</FrameLayout>

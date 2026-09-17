@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#E5EEFF</color>
+    <color name="colorAccent">#1a1a1a</color>
+    <color name="colorNeon">#44d62c</color>
+
+    <!-- Kinetic Glass POS palette (light) -->
+    <color name="colorSurfaceBase">#FFFFFF</color>
+    <color name="colorSurfaceContainer">#F8FAFC</color>
+    <color name="colorSurfaceContainerHigh">#DCE9FF</color>
+    <color name="colorKeypadKey">#F8FAFC</color>
+    <color name="colorKeypadKeyPressed">#1F44D62C</color>
+    <color name="colorOutlineHairline">#1F0F172A</color>
+    <color name="colorPrimaryEmerald">#44D62C</color>
+    <color name="colorPrimaryEmeraldPressed">#38B824</color>
+    <color name="colorChargeButtonDisabled">#CBD5E1</color>
+    <color name="colorOnPrimaryEmerald">#0B1329</color>
+    <color name="colorClearRed">#DC2626</color>
+    <color name="colorClearRedPressed">#B91C1C</color>
+    <color name="colorOnClearRed">#FFFFFF</color>
+    <color name="colorOnSurface">#0B1C30</color>
+    <color name="colorOnSurfaceVariant">#64748B</color>
+    <color name="colorSurfaceInset">#F1F5F9</color>
+    <color name="colorScrimDim">#99000000</color>
+    <color name="colorScrimOnBlur">#59000000</color>
+</resources>

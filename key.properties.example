@@ -1,0 +1,7 @@
+# Android signing config.
+# Copy this file to key.properties (gitignored) and fill in local values.
+# Do not commit key.properties or the keystore file.
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=YOUR_KEY_ALIAS
+storeFile=topapp.jks

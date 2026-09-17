@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Fiuu ToP Demo App</string>
+    <string name="ALERT_NFC_NOT_ENABLE">NFC is not enabled. Please enable NFC in the settings screen. </string>
+    <string name="BTN_SETTINGS">Settings</string>
+    <string name="ALERT_NOT_SUPPORTED_MSG">Not Supported.</string>
+    <string name="charge_button_label">CHARGE MYR %1$s</string>
+    <string name="dialog_charge_amount">MYR %1$s</string>
+    <string name="info_button_description">Info</string>
+    <string-array name="log_options">
+        <item>Show Log</item>
+        <item>Hide Log</item>
+    </string-array>
+    <string name="dev_log_show">▲  DEVELOPER LOG</string>
+    <string name="dev_log_hide">▼  DEVELOPER LOG</string>
+    <string name="dev_log_clear">Clear</string>
+    <string name="loading">Loading...</string>
+    <string name="payment_success_title">Payment Success</string>
+    <string name="void_success_title">Void Success</string>
+    <string name="payment_failed_title">Payment Failed</string>
+    <string name="void_failed_title">Void Failed</string>
+</resources>

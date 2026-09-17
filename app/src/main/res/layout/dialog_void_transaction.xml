@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/dialogVoidBlurBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorScrimOnBlur" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_md"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_xl"
+            android:background="@drawable/bg_amount_card"
+            android:elevation="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Void Last Transaction"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/bebas"
+                android:textColor="@color/colorOnSurface" />
+
+            <TextView
+                android:id="@+id/dialogVoidSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:gravity="center_horizontal"
+                android:text="Confirm the details below to void this transaction"
+                android:textSize="14sp"
+                android:textColor="@color/colorOnSurfaceVariant" />
+
+            <TextView
+                style="@style/VoidFieldLabel"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="UNIQUE ID" />
+
+            <EditText
+                android:id="@+id/edtVoidUniqueId"
+                style="@style/VoidFieldInput" />
+
+            <TextView
+                style="@style/VoidFieldLabel"
+                android:text="ORDER ID" />
+
+            <EditText
+                android:id="@+id/edtVoidOrderId"
+                style="@style/VoidFieldInput" />
+
+            <TextView
+                style="@style/VoidFieldLabel"
+                android:text="AMOUNT (IN CENTS)" />
+
+            <EditText
+                android:id="@+id/edtVoidAmount"
+                style="@style/VoidFieldInput"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                style="@style/VoidFieldLabel"
+                android:text="TRANSACTION ID" />
+
+            <EditText
+                android:id="@+id/edtVoidTransId"
+                style="@style/VoidFieldInput" />
+
+            <TextView
+                style="@style/VoidFieldLabel"
+                android:text="AID" />
+
+            <EditText
+                android:id="@+id/edtVoidAid"
+                style="@style/VoidFieldInput" />
+
+            <Button
+                android:id="@+id/btnDialogVoidProceed"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="Proceed Void"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorOnClearRed"
+                android:background="@drawable/bg_void_button" />
+
+            <Button
+                android:id="@+id/btnDialogVoidCancel"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/colorOnSurface"
+                android:background="@drawable/bg_dialog_cancel_button" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.fiuu.toppayment.DevLogPanelView
+        android:id="@+id/devLogPanelVoidDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:elevation="16dp" />
+
+</FrameLayout>

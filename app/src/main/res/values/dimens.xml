@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 8dp base spacing scale, matching the Stitch "Midnight Tap-on-Phone" spacing tokens -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <dimen name="keypad_gap">12dp</dimen>
+    <dimen name="keypad_key_min_height">56dp</dimen>
+    <dimen name="cta_min_height">56dp</dimen>
+    <dimen name="amount_card_corner_radius">24dp</dimen>
+
+    <dimen name="dev_log_panel_content_height">240dp</dimen>
+</resources>

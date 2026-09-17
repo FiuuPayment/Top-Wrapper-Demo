@@ -1,0 +1,131 @@
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+def secretsProperties = new Properties()
+def secretsPropertiesFile = rootProject.file('secrets.properties')
+if (secretsPropertiesFile.exists()) {
+    secretsProperties.load(new FileInputStream(secretsPropertiesFile))
+} else {
+    throw new GradleException(
+        "Missing secrets.properties. Copy secrets.properties.example to secrets.properties " +
+        "in the project root and fill in the real Fasstap SDK credentials before building."
+    )
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.fiuu.toppayment"//TODO required MUST be the same in Google Developer Account
+        minSdkVersion 29
+        targetSdkVersion 35
+        versionCode 22022101
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "FASSTAP_UNIQUE_ID", "\"${secretsProperties.getProperty('uniqueId')}\""
+        buildConfigField "String", "FASSTAP_VKEY", "\"${secretsProperties.getProperty('vKey')}\""
+        buildConfigField "String", "FASSTAP_ACCESS_KEY", "\"${secretsProperties.getProperty('libAccessKey')}\""
+        buildConfigField "String", "FASSTAP_SECRET_KEY", "\"${secretsProperties.getProperty('libSecretKey')}\""
+        buildConfigField "String", "FASSTAP_HOST", "\"${secretsProperties.getProperty('attestationHost')}\""
+        buildConfigField "String", "FASSTAP_HOST_PINNING", "\"${secretsProperties.getProperty('hostCertPinning')}\""
+        buildConfigField "String", "FASSTAP_KEYLOADING_HOST", "\"${secretsProperties.getProperty('keyloadingHost')}\""
+        buildConfigField "String", "FASSTAP_KEYLOADING_PINNING", "\"${secretsProperties.getProperty('keyloadingCertPinning')}\""
+        buildConfigField "String", "FASSTAP_CA_CERT", "\"${secretsProperties.getProperty('cert')}\""
+
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    signingConfigs {
+        sskey {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+            v1SigningEnabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.sskey
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sskey
+        }
+    }
+
+    // Changed namespace to avoid collision with topnewroute library's BuildConfig
+    namespace "com.fiuu.toppayment.app"
+
+    lint {
+        abortOnError false
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    debugImplementation files("libs/topnewroute-debug.aar")
+    releaseImplementation files("libs/topnewroute-release.aar")
+    implementation files("libs/filter-ssmobile.jar")
+    implementation files("libs/mobile-pogengine.aar")
+    implementation "se.warting.signature:signature-view:0.1.1"
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'junit:junit:4.13.2'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    implementation 'com.google.android.gms:play-services-safetynet:18.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'androidx.room:room-runtime:2.6.1'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.lifecycle:lifecycle-process:2.8.5"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    implementation 'com.google.android.play:integrity:1.4.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
+
+    implementation 'com.google.android.material:material:1.14.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+}

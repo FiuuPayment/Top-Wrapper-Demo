@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_md"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_md"
+    android:background="@drawable/bg_amount_card"
+    android:elevation="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/spacing_lg">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Overview"
+            android:fontFamily="@font/bebas"
+            android:textStyle="bold"
+            android:textColor="@color/colorOnSurface"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:src="@drawable/info_icon"
+            android:importantForAccessibility="no" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This demo application is designed to showcase the Tap On Phone functionality, allowing users to process payments directly on their mobile devices. In the demo, users can simulate tapping a card or mobile wallet on a merchant's phone to initiate a transaction. Once the card is tapped, the app will process the payment instantly without needing external hardware.\n\nTo proceed, users are required to complete the payment simulation, demonstrating the seamless integration and smooth transition of the payment flow using only a phone."
+        android:textColor="@color/colorOnSurfaceVariant"
+        android:textSize="14sp"
+        android:lineSpacingExtra="2dp" />
+
+    <Button
+        android:id="@+id/btnOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:minWidth="64dp"
+        android:minHeight="48dp"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:text="OK"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorPrimaryEmerald" />
+
+</LinearLayout>
