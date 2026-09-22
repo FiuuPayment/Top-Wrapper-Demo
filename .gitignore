@@ -30,6 +30,11 @@ render.experimental.xml
 *.jks
 *.keystore
 
+# ToP libraries are given to merchants after registration, not in this repo
+app/libs/*.aar
+app/libs/*.jar
+app/libs/*.zip
+
 # Google Services (e.g. APIs or Firebase)
 google-services.json
 

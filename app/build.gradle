@@ -22,7 +22,8 @@ android {
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.fiuu.toppayment"//TODO required MUST be the same in Google Developer Account
+        // Sample default only. Merchants must set this to their own App ID before testing.
+        applicationId "com.fiuu.toppayment"
         minSdkVersion 29
         targetSdkVersion 35
         versionCode 22022101
