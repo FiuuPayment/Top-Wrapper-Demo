@@ -10,9 +10,7 @@ Build this tester on a real NFC device with **your** App ID and credentials. Whe
 
 Full SDK integration docs (credential setup, `init`/login, starting a transaction, PIN/signature handling, voiding, status codes) live on the ToP wrapper docs site:
 
-- [Fiuu ToP docs](https://fiuupayment.github.io/top-wrapper/) — placeholder link, site not deployed yet
-  - [Getting Started](https://fiuupayment.github.io/top-wrapper/getting-started)
-  - [Flow Overview](https://fiuupayment.github.io/top-wrapper/flow-overview)
+- [Fiuu ToP docs](https://fiuupayment.github.io/top-wrapper/)
 
 This README only covers building and running this tester app; refer to the docs above for wiring the SDK into your own app.
 
