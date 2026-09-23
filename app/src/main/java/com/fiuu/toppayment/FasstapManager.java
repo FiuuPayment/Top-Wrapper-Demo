@@ -352,9 +352,7 @@ public class FasstapManager {
                             break;
                         case 7056:
                         default:
-                            writeLog(
-                                    "Transaction Result: UNKNOWN (" + i + ") "
-                                            + s);
+                            displayErrorMessage(i, "UNKNOWN (" + s + ")");
                             break;
                     }
                 }

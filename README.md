@@ -6,6 +6,14 @@ This public repo is a **reference app**: it shows how to call the ToP wrapper (a
 
 Build this tester on a real NFC device with **your** App ID and credentials. When a tap sale works here, you can apply the same flow in your own merchant app.
 
+## Documentation
+
+Full SDK integration docs (credential setup, `init`/login, starting a transaction, PIN/signature handling, voiding, status codes) live on the ToP wrapper docs site:
+
+- [Fiuu ToP docs](https://fiuupayment.github.io/top-wrapper/)
+
+This README only covers building and running this tester app; refer to the docs above for wiring the SDK into your own app.
+
 ## Libraries
 
 The `.aar` and `.jar` files are provided by Fiuu. They are not in this public repo.
